@@ -174,3 +174,10 @@ double qFunct ( double radius, double t, double b, double D ) {
     return q;
 
 }
+
+
+double freeDiff (double r, double t, double D){
+
+    return 	exp (-r*r/4/D/t)*r*r/sqrt(4*M_PI*pow(D*t,3) );
+
+}

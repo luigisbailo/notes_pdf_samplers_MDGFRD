@@ -88,23 +88,15 @@ double Pfunct ( double radius, double t, double b, double D, double S ) {
     P = 0;
     m = 1;
 
-    if (t < b*b/D*0.2) {
+    do {
 
-        do {
+        termA =  pow(coeff1,m*m);
+        termB =  b*sin(m*M_PI*radius/b)/m - M_PI*radius*cos(m*M_PI*radius/b);
+        term =  coeff2 * termA * termB / (1-S);
+        P += term;
+        m += 1;
 
-            termA =  pow(coeff1,m*m);
-            termB =  b*sin(m*M_PI*radius/b)/m - M_PI*radius*cos(m*M_PI*radius/b);
-            term =  coeff2 * termA * termB / (1-S);
-            P += term;
-            m += 1;
-
-        } while ( fabs(term) > conv  |  termA>termB/100 |  P>1 );
-
-    } else {
-
-        P = sin(M_PI*radius/b)/M_PI - cos(M_PI*radius/b)*radius/b;
-
-    }
+    } while ( fabs(term) > conv  |  termA>termB/100 );
 
     return P;
 
@@ -124,56 +116,20 @@ double Pder ( double radius, double t, double b, double D, double S ) {
     P = 0;
     m = 1;
 
-    if (t < b*b/D*0.2) {
-
-        do {
-
-            termA = pow(coeff1,m*m);
-            termB = sin (m*M_PI*radius/b) * m * radius;
-            term = coeff2 * termA * termB / (1-S);
-            P += term;
-            m += 1;
-
-        } while ( fabs(term) > conv  |  termA>termB/100 );
-
-    }
-    else {
-
-        P = M_PI*sin(M_PI*radius/b)*radius/b/b;
-
-    }
-
-    return P;
-
-}
-
-
-double qFunct ( double radius, double t, double b, double D ) {
-
-    double coeff1 = exp ( - M_PI*M_PI*D*t/(b*b));
-    double coeff2 = 2*M_PI*D/radius/b;
-    double q;
-    double  term, term1, term2;
-    int m;
-    double conv = 0.000000001/(b*b/D);
-
-    q = 0;
-    m = 1;
-
     do {
 
-        term1 =  pow(coeff1,m*m)*sin(m*M_PI*radius/b)*m;
-        term2 = pow(coeff1,(m+1)*(m+1))*sin((m+1)*M_PI*radius/b)*(m+1);
-        term =  coeff2 * (term1 - term2);
-        q += term;
-        m += 2;
+        termA = pow(coeff1,m*m);
+        termB = sin (m*M_PI*radius/b) * m * radius;
+        term = coeff2 * termA * termB / (1-S);
 
+        P += term;
+        m += 1;
 
-    } while ( fabs(term) > conv | m<100 );
+    } while ( fabs(term) > conv  |  termA>termB/100 );
 
-    return q;
-
+    return P;
 }
+
 
 
 double freeDiff (double r, double t, double D){
@@ -210,9 +166,10 @@ double Sfunct_count ( double t, double b, double D) {
     else
         S = 0;
 
-    return S;
+    return m;
 
 }
+
 
 
 double Sder_count ( double t, double b, double D) {
@@ -255,77 +212,6 @@ double Sder_count ( double t, double b, double D) {
 }
 
 
-double Pfunct_count ( double radius, double t, double b, double D, double S ) {
-
-    double coeff1 = exp ( - M_PI*M_PI*D*t/(b*b));
-    double coeff2 = 2/(b*M_PI);
-    double P;
-    double  term, termA, termB;
-    int m;
-    double conv = 0.00000001/b;
-
-    P = 0;
-    m = 1;
-
-    if (t < b*b/D*0.2) {
-
-        do {
-
-            termA =  pow(coeff1,m*m);
-            termB =  b*sin(m*M_PI*radius/b)/m - M_PI*radius*cos(m*M_PI*radius/b);
-            term =  coeff2 * termA * termB / (1-S);
-            P += term;
-            m += 1;
-
-        } while ( fabs(term) > conv  |  termA>termB/100 |  P>1 );
-
-    } else {
-
-        P = sin(M_PI*radius/b)/M_PI - cos(M_PI*radius/b)*radius/b;
-
-    }
-
-    return m;
-
-}
-
-
-double Pder_count ( double radius, double t, double b, double D, double S ) {
-
-    double coeff1 = exp ( -M_PI*M_PI*D*t/(b*b)  );
-    double coeff2 = 2*M_PI/b/b;
-    double P;
-    double term;
-    double termA,termB;
-    int m;
-    double conv = 0.0001/b;
-
-    P = 0;
-    m = 1;
-
-    if (t < b*b/D*0.2) {
-
-        do {
-
-            termA = pow(coeff1,m*m);
-            termB = sin (m*M_PI*radius/b) * m * radius;
-            term = coeff2 * termA * termB / (1-S);
-            P += term;
-            m += 1;
-
-        } while ( fabs(term) > conv  |  termA>termB/100 );
-
-    }
-    else {
-
-        P = M_PI*sin(M_PI*radius/b)*radius/b/b;
-
-    }
-
-    return m;
-
-}
-
 
 double qFunct_count ( double radius, double t, double b, double D ) {
 
@@ -354,3 +240,56 @@ double qFunct_count ( double radius, double t, double b, double D ) {
 
 }
 
+
+double Pfunct_count ( double radius, double t, double b, double D, double S ) {
+
+    double coeff1 = exp ( - M_PI*M_PI*D*t/(b*b));
+    double coeff2 = 2/(b*M_PI);
+    double P;
+    double  term, termA, termB;
+    int m;
+    double conv = 0.00000001/b;
+
+    P = 0;
+    m = 1;
+
+    do {
+        termA =  pow(coeff1,m*m);
+        termB =  b*sin(m*M_PI*radius/b)/m - M_PI*radius*cos(m*M_PI*radius/b);
+        term =  coeff2 * termA * termB / (1-S);
+        P += term;
+        m += 1;
+
+    } while ( fabs(term) > conv  |  termA>termB/100 );
+
+    return m;
+
+}
+
+
+double Pder_count ( double radius, double t, double b, double D, double S ) {
+
+    double coeff1 = exp ( -M_PI*M_PI*D*t/(b*b)  );
+    double coeff2 = 2*M_PI/b/b;
+    double P;
+    double term;
+    double termA,termB;
+    int m;
+    double conv = 0.0001/b;
+
+    P = 0;
+    m = 1;
+
+    do {
+
+        termA = pow(coeff1,m*m);
+        termB = sin (m*M_PI*radius/b) * m * radius;
+        term = coeff2 * termA * termB / (1-S);
+
+        P += term;
+        m += 1;
+
+    } while ( fabs(term) > conv  |  termA>termB/100 );
+
+    return m;
+}

@@ -7,7 +7,7 @@ add_executable(main
         generate_data.c
         greensFunct.h
         draw.h
-        )
+        make_data_fig1.h make_data_fig2.h)
 
 find_package(GSL REQUIRED)
 target_link_libraries(main GSL::gsl GSL::gslcblas)

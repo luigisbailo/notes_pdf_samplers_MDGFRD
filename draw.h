@@ -3,6 +3,10 @@
 
 #pragma once
 
+#include <stdio.h>
+#include <math.h>
+
+#include "parameters.h"
 #include "greensFunct.h"
 
 double drawTimeNewt ( double b, double D, double xi ) {

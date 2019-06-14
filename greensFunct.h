@@ -11,7 +11,7 @@ double Sfunct ( double t, double b, double D) {
     double S = 0;
     double term,termA,termB;
     int m = 1;
-    double conv = 0.0000001/(b*b/D);
+    double conv = 0.00000001/(b*b/D);
 
     if ( t>= b*b/D/100 ) {
 
@@ -45,7 +45,7 @@ double Sder ( double t, double b, double D) {
     double termA,termB,termC,termD;
     int m;
 
-    double conv = 0.00001/(b*b/D);
+    double conv = 0.00000001/(b*b/D);
 
     S = 0;
     m = 1;
@@ -75,6 +75,37 @@ double Sder ( double t, double b, double D) {
 
 }
 
+
+double Sder2 ( double t, double b, double D) {
+
+    double coeff1 = exp ( - M_PI*M_PI*D*t/(b*b) );
+    double coeff2 = -2*D*D*M_PI*M_PI*M_PI*M_PI/(b*b*b*b);
+    double S;
+    double term;
+    double termA,termB,termC,termD;
+    int m;
+
+    double conv = 0.0001/(b*b/D);
+
+    S = 0;
+    m = 1;
+
+    do {
+
+        termA = pow (coeff1,m*m);
+        termB = m*m*m*m;
+        termC = pow (coeff1,(m+1)*(m+1));
+        termD = (m+1)*(m+1)*(m+1)*(m+1);
+        term =  ( termA*termB - termC*termD );
+
+        S += term;
+        m += 2;
+
+    } while ( fabs (term) > conv | termC > termD/100  );
+
+    return S*coeff2;
+
+}
 
 double Pfunct ( double radius, double t, double b, double D, double S ) {
 
@@ -111,7 +142,7 @@ double Pder ( double radius, double t, double b, double D, double S ) {
     double term;
     double termA,termB;
     int m;
-    double conv = 0.0001/b;
+    double conv = 0.00000001/b;
 
     P = 0;
     m = 1;
@@ -131,6 +162,33 @@ double Pder ( double radius, double t, double b, double D, double S ) {
 }
 
 
+
+double Pder2 ( double radius, double t, double b, double D, double S ) {
+
+    double coeff1 = exp ( -M_PI*M_PI*D*t/(b*b )  );
+    double coeff2 = 2*M_PI/b/b/(1-S);
+    double P;
+    double termA, termB, term;
+    int m;
+    double conv = 0.0000001/b;
+
+    term = 0;
+    P = 0;
+    m = 1;
+
+    do {
+
+        termA = pow(coeff1,m*m);
+        termB =  m * sin (m*M_PI*radius/b) + m*m*M_PI*radius/b * cos (m*M_PI*radius/b);
+        term  = termA*termB;
+        P += term;
+        m += 1;
+
+    } while ( fabs (term) > conv | termA>termB/100 );
+
+    return P*coeff2;
+
+}
 
 double freeDiff (double r, double t, double D){
 
@@ -248,7 +306,7 @@ double Pfunct_count ( double radius, double t, double b, double D, double S ) {
     double P;
     double  term, termA, termB;
     int m;
-    double conv = 0.00000001/b;
+    double conv = 0.0000001/b;
 
     P = 0;
     m = 1;
@@ -275,7 +333,7 @@ double Pder_count ( double radius, double t, double b, double D, double S ) {
     double term;
     double termA,termB;
     int m;
-    double conv = 0.0001/b;
+    double conv = 0.0000001/b;
 
     P = 0;
     m = 1;

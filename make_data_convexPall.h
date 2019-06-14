@@ -13,7 +13,7 @@
 #include "greensFunct.h"
 
 
-void make_data_fig3() {
+void make_data_convexPall() {
 
     FILE *fp;
 

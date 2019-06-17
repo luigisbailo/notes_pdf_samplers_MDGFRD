@@ -10,7 +10,7 @@ color1 = '#3366CC'
 color2 = '#CC6633'
 
 
-data = np.loadtxt('./results/samplers_fig6_q.txt')
+data = np.loadtxt('./results/samplers_convergenceNewton_q.txt')
 bar_width = data[1, 0] - data[0, 0]
 ax_q1 = axs[0,0]
 ax_q100 = axs[0,1]
@@ -21,7 +21,7 @@ ax_q100.text(loc_x,loc_y,r"$b=100$",transform=ax_q100.transAxes, bbox=boxstyle)
 ax_q1.set_ylabel(r'$i^*$')
 
 
-data = np.loadtxt('./results/samplers_fig6_pt1.txt')
+data = np.loadtxt('./results/samplers_convergenceNewton_pt1.txt')
 bar_width = data[1, 0] - data[0, 0]
 ax_p1 = axs[3,0]
 ax_p100 = axs[3,1]
@@ -34,7 +34,7 @@ ax_p100.text(loc_x,loc_y,text,transform=ax_p100.transAxes, bbox=boxstyle)
 ax_p1.set_ylabel(r'$j^*$')
 
 
-data = np.loadtxt('./results/samplers_fig6_pt10.txt')
+data = np.loadtxt('./results/samplers_convergenceNewton_pt10.txt')
 bar_width = data[1, 0] - data[0, 0]
 ax_p1 = axs[2,0]
 ax_p100 = axs[2,1]
@@ -47,7 +47,7 @@ ax_p100.text(loc_x,loc_y,text,transform=ax_p100.transAxes, bbox=boxstyle)
 ax_p1.set_ylabel(r'$j^*$')
 
 
-data = np.loadtxt('./results/samplers_fig6_pt100.txt')
+data = np.loadtxt('./results/samplers_convergenceNewton_pt100.txt')
 bar_width = data[1, 0] - data[0, 0]
 ax_p1 = axs[1,0]
 ax_p100 = axs[1,1]
@@ -71,5 +71,5 @@ axs[3,1].set_xlabel(r"$\xi$")
 
 plt.tight_layout()
 
-plt.savefig('./figures/samplers_fig6.pdf')
+plt.savefig('./figures/samplers_convergenceNewton.pdf')
 

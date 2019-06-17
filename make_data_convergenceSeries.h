@@ -1,7 +1,7 @@
 // author luigisbailo
 
-#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG2_H
-#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG2_H
+#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_CONVERGENCESERIES_H
+#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_CONVERGENCESERIES_H
 
 #include <math.h>
 
@@ -14,7 +14,7 @@
 #include "greensFunct.h"
 
 
-void make_data_fig2() {
+void make_data_convergenceSeries () {
 
     // number of terms in sums used for convergence.
     // sums are p,q,S,P
@@ -44,7 +44,7 @@ void make_data_fig2() {
             t += dt;
         }
     }
-    fp_qS = fopen("../results/samplers_fig2_qS.txt", "w");
+    fp_qS = fopen("../results/samplers_convergenceSeries_qS.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_qS, "%lf\t%lf\t%lf\n", t0+ samples_per_bin*(count+0.5)*dt,
                  arr_q[count]/samples_per_bin, arr_S[count]/samples_per_bin);
@@ -71,7 +71,7 @@ void make_data_fig2() {
 
         }
     }
-    fp_pP_t1 = fopen("../results/samplers_fig2_pP_t1.txt", "w");
+    fp_pP_t1 = fopen("../results/samplers_convergenceSeries_pP_t1.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t1, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);
@@ -95,7 +95,7 @@ void make_data_fig2() {
 
         }
     }
-    fp_pP_t10 = fopen("../results/samplers_fig2_pP_t10.txt", "w");
+    fp_pP_t10 = fopen("../results/samplers_convergenceSeries_pP_t10.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t10, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);
@@ -119,7 +119,7 @@ void make_data_fig2() {
 
         }
     }
-    fp_pP_t100 = fopen("../results/samplers_fig2_pP_t100.txt", "w");
+    fp_pP_t100 = fopen("../results/samplers_convergenceSeries_pP_t100.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t100, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);

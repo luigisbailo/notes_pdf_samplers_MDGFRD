@@ -1,7 +1,7 @@
 // author luigisbailo
 
-#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG7_H
-#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG7_H
+#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FUNCRECONSTR_H
+#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FUNCRECONSTR_H
 
 #include <math.h>
 
@@ -14,7 +14,7 @@
 #include "draw.h"
 
 
-void make_data_fig7() {
+void make_data_funcReconstr () {
 
 
     const gsl_rng_type *Type;
@@ -45,7 +45,7 @@ void make_data_fig7() {
         int bin = (int)(trunc(drawTimeNewt (b,D,gsl_rng_uniform(r))/dt));
         arr_exitTime[bin] ++;
     }
-    fp = fopen("../results/samplers_fig7_q.txt", "w");
+    fp = fopen("../results/samplers_funcReconstr_q.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dt,
                 arr_exitTime[count] / n_samples);
@@ -62,7 +62,7 @@ void make_data_fig7() {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r)) /dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_fig7_pt100.txt", "w");
+    fp = fopen("../results/samplers_funcReconstr_pt100.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
                 arr_exitPosition[count] / n_samples);
@@ -80,7 +80,7 @@ void make_data_fig7() {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r))/dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_fig7_pt10.txt", "w");
+    fp = fopen("../results/samplers_funcReconstr_pt10.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
                 arr_exitPosition[count] / n_samples);
@@ -98,7 +98,7 @@ void make_data_fig7() {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r))/dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_fig7_pt1.txt", "w");
+    fp = fopen("../results/samplers_funcReconstr_pt1.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
                 arr_exitPosition[count] / n_samples);

@@ -1,7 +1,7 @@
 // author luigisbailo
 
-#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG6_H
-#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG6_H
+#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_CONVERGENCENEWTON_H
+#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_CONVERGENCENEWTON_H
 
 #include <math.h>
 
@@ -14,7 +14,7 @@
 #include "draw.h"
 
 
-void make_data_fig6() {
+void make_data_convergenceNewton () {
 
     FILE *fp;
     double b1 = 1;
@@ -42,7 +42,7 @@ void make_data_fig6() {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_fig6_q.txt", "w");
+    fp = fopen("../results/samplers_convergenceNewton_q.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_exitTime_b1[count] / samples_per_bin, arr_exitTime_b100[count] / samples_per_bin);
@@ -69,7 +69,7 @@ void make_data_fig6() {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_fig6_pt1.txt", "w");
+    fp = fopen("../results/samplers_convergenceNewton_pt1.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);
@@ -96,7 +96,7 @@ void make_data_fig6() {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_fig6_pt10.txt", "w");
+    fp = fopen("../results/samplers_convergenceNewton_pt10.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);
@@ -124,7 +124,7 @@ void make_data_fig6() {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_fig6_pt100.txt", "w");
+    fp = fopen("../results/samplers_convergenceNewton_pt100.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);

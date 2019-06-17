@@ -1,8 +1,8 @@
 // author luigisbailo
 
-#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG1_H
+#ifndef NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_COMPARISONPFREE_H
 
-#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG1_H
+#define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_COMPARISONPFREE_H
 
 #include <math.h>
 
@@ -14,7 +14,7 @@
 #include "parameters.h"
 #include "greensFunct.h"
 
-void make_data_fig1 (){
+void make_data_comparisonPfree (){
     //comparison of free diffusion against bursting pde.
     //at very short times these two probabilities are equivalent.
 
@@ -26,7 +26,7 @@ void make_data_fig1 (){
     double p,p_free;
     FILE *fp;
 
-    fp = fopen("../results/samplers_fig1.txt", "w");
+    fp = fopen("../results/samplers_comparisonPfree.txt", "w");
 
     while (r<b) {
         t = b*b/D/100;
@@ -39,6 +39,7 @@ void make_data_fig1 (){
         fprintf (fp, "%lf\t%lf\n",p,p_free);
 
         r += b/1000;
+
     }
 
     fclose(fp);

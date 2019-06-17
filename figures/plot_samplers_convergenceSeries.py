@@ -6,7 +6,7 @@ f, axs = plt.subplots(nrows=4, ncols=2, figsize=(6,8), tight_layout=True)
 loc_x = 0.6
 loc_y = 0.7
 
-data_qS = np.loadtxt('./results/samplers_fig2_qS.txt')
+data_qS = np.loadtxt('./results/samplers_convergenceSeries_qS.txt')
 bar_width = data_qS[1, 0] - data_qS[0, 0]
 ax_q = axs[0,0]
 ax_s = axs[0,1]
@@ -22,7 +22,7 @@ ax_s.set_ylabel(r'$n^*$')
 loc_x = 0.25
 loc_y = 0.7
 
-data_pP = np.loadtxt('./results/samplers_fig2_pP_t1.txt')
+data_pP = np.loadtxt('./results/samplers_convergenceSeries_pP_t1.txt')
 bar_width = data_pP[1, 0] - data_pP[0, 0]
 ax_p = axs[1,0]
 ax_P = axs[1,1]
@@ -36,7 +36,7 @@ ax_p.set_ylabel(r'$m^*$')
 ax_P.set_ylabel(r'$m^*$')
 
 
-data_pP = np.loadtxt('./results/samplers_fig2_pP_t10.txt')
+data_pP = np.loadtxt('./results/samplers_convergenceSeries_pP_t10.txt')
 bar_width = data_pP[1, 0] - data_pP[0, 0]
 ax_p = axs[2,0]
 ax_P = axs[2,1]
@@ -50,7 +50,7 @@ ax_p.set_ylabel(r'$m^*$')
 ax_P.set_ylabel(r'$m^*$')
 
 
-data_pP = np.loadtxt('./results/samplers_fig2_pP_t100.txt')
+data_pP = np.loadtxt('./results/samplers_convergenceSeries_pP_t100.txt')
 bar_width = data_pP[1, 0] - data_pP[0, 0]
 ax_p = axs[3,0]
 ax_P = axs[3,1]
@@ -70,4 +70,4 @@ for ax_i in np.arange (axs.shape[0]):
         axs[ax_i,ax_j].set_ylim(0,30)
 
 
-plt.savefig('./figures/samplers_fig2.pdf')
+plt.savefig('./figures/samplers_convergenceSeries.pdf')

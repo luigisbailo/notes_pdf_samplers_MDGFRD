@@ -26,7 +26,7 @@ void make_data_convexPall() {
     double dt = b*b/D/100;
     double T = b*b/D;
     double dr = b/100000;
-    fp = fopen("../results/samplers_fig3_b1.txt", "w");
+    fp = fopen("../results/samplers_convexP_b1all.txt", "w");
 
     t=dt;
     while (t<T) {
@@ -55,7 +55,7 @@ void make_data_convexPall() {
     dt = b*b/D/100;
     T = b*b/D;
     dr = b/100000;
-    fp = fopen("../results/samplers_fig3_b10.txt", "w");
+    fp = fopen("../results/samplers_convexP_b10all.txt", "w");
 
     t=dt;
     while (t<T) {
@@ -84,4 +84,4 @@ void make_data_convexPall() {
 
 #define NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG3_H
 
-#endif //NOTES_PDF_SAMPLERS_MDGFRD_MAKE_DATA_FIG3_H
+#endif

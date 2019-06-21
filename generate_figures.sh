@@ -5,7 +5,7 @@ COMMAND="cd build && rm -rf * && cmake .. && make && cd ../bin "
 eval ${COMMAND}
 
 COMMAND="./main"
-#eval ${COMMAND}
+eval ${COMMAND}
 
 COMMAND="cd ../src"
 eval ${COMMAND}

@@ -114,7 +114,7 @@ double Pfunct ( double radius, double t, double b, double D, double S ) {
     double P;
     double  term, termA, termB;
     int m;
-    double conv = 0.00000001/b;
+    double conv = 0.000000001/b;
 
     P = 0;
     m = 1;
@@ -142,7 +142,7 @@ double Pder ( double radius, double t, double b, double D, double S ) {
     double term;
     double termA,termB;
     int m;
-    double conv = 0.00000001/b;
+    double conv = 0.000000001/b;
 
     P = 0;
     m = 1;

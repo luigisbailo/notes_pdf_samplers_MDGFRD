@@ -80,8 +80,6 @@ void make_data_convergenceNewton () {
     //t=b*b/D/10
     t1 = b1*b1/D/10;
     t100 = b100*b100/D/10;
-    arr_position_b1[n_bins];
-    arr_position_b100[n_bins];
     Xi0 = dXi;
     Xi=Xi0;
 
@@ -108,8 +106,6 @@ void make_data_convergenceNewton () {
     //t=b*b/D/100
     t1 = b1*b1/D/100;
     t100 = b100*b100/D/100;
-    arr_position_b1[n_bins];
-    arr_position_b100[n_bins];
     Xi0 = dXi;
     Xi=Xi0;
 

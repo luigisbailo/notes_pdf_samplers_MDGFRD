@@ -12,21 +12,22 @@
 
 int main () {
 
-//    make_data_comparisonPfree();
 
-//    make_data_convergenceSeries();
-
-//    make_data_convexS();
+    make_data_convexS();
 
     make_data_convexSall();
 
-//    make_data_convexP();
+    make_data_convexP();
 
-//    make_data_convexPall();
+    make_data_convexPall();
 
-//    make_data_convergenceNewton();
+    make_data_comparisonPfree();
 
-//    make_data_funcReconstr();
+    make_data_convergenceNewton();
+
+    make_data_convergenceSeries();
+
+    make_data_funcReconstr();
 
 }
 

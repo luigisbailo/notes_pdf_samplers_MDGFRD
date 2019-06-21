@@ -4,10 +4,17 @@ project(notes_pdf_samplers_MDGFRD)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(main
-        generate_data.c
-        greensFunct.h
-        draw.h
-        make_data_comparisonPfree.h make_data_convergenceSeries.h make_data_convexPall.h make_data_convexS.h make_data_convexP.h make_data_convergenceNewton.h make_data_funcReconstr.h make_data_convexSall.h)
+        src/generate_data.c
+        src/greensFunct.h
+        src/draw.h
+        src/make_data_comparisonPfree.h
+        src/make_data_convergenceSeries.h
+        src/make_data_convexPall.h
+        src/make_data_convexSall.h
+        src/make_data_convexS.h
+        src/make_data_convexP.h
+        src/make_data_convergenceNewton.h
+        src/make_data_funcReconstr.h)
 
 find_package(GSL REQUIRED)
 target_link_libraries(main GSL::gsl GSL::gslcblas)

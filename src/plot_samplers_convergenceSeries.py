@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-f, axs = plt.subplots(nrows=4, ncols=2, figsize=(6,8), tight_layout=True)
+f, axs = plt.subplots(nrows=4, ncols=2, figsize=(5,7), sharex=True, sharey=True)
 
-loc_x = 0.6
-loc_y = 0.7
+loc_x = 0.1
+loc_y = 0.75
+boxstyle = dict(boxstyle='round',fc="w", ec="k")
+
 
 data_qS = np.loadtxt('./results/samplers_convergenceSeries_qS.txt')
 bar_width = data_qS[1, 0] - data_qS[0, 0]
@@ -19,9 +21,8 @@ ax_s.set_xlabel('t')
 ax_q.set_ylabel(r'$n^*$')
 ax_s.set_ylabel(r'$n^*$')
 
-loc_x = 0.25
-loc_y = 0.7
 
+loc_y = 0.7
 data_pP = np.loadtxt('./results/samplers_convergenceSeries_pP_t1.txt')
 bar_width = data_pP[1, 0] - data_pP[0, 0]
 ax_p = axs[1,0]
@@ -67,7 +68,8 @@ ax_P.set_ylabel(r'$m^*$')
 # axs[:,:].set_ylim(0,10)
 for ax_i in np.arange (axs.shape[0]):
     for ax_j in np.arange(axs.shape[1]):
-        axs[ax_i,ax_j].set_ylim(0,30)
+        axs[ax_i,ax_j].set_ylim(0,40)
 
+plt.subplots_adjust(hspace=0.25, wspace=0.15)
 
-plt.savefig('./figures/samplers_convergenceSeries.pdf')
+plt.savefig('../figures/samplers_convergenceSeries.pdf')

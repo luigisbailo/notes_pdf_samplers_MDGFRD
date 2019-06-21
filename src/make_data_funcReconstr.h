@@ -11,6 +11,7 @@
 #include <gsl/gsl_math.h>
 
 #include "parameters.h"
+#include "greensFunct.h"
 #include "draw.h"
 
 
@@ -31,6 +32,7 @@ void make_data_funcReconstr () {
     FILE *fp;
     double b = 1.;
     double D = 1.;
+    double xaxis;
     int n_bins = 100;
     int n_samples = 1000000;
 
@@ -47,8 +49,9 @@ void make_data_funcReconstr () {
     }
     fp = fopen("../results/samplers_funcReconstr_q.txt", "w");
     for (int count = 0; count < n_bins; count++) {
-        fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dt,
-                arr_exitTime[count] / n_samples);
+        xaxis = (count + 0.5) * dt;
+        fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
+                arr_exitTime[count] / n_samples, Sder(xaxis,b,D)*dt );
     }
     fclose(fp);
 
@@ -64,15 +67,15 @@ void make_data_funcReconstr () {
     }
     fp = fopen("../results/samplers_funcReconstr_pt100.txt", "w");
     for (int count = 0; count < n_bins; count++) {
-        fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
-                arr_exitPosition[count] / n_samples);
+        xaxis = (count + 0.5) * dr;
+        fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
+                arr_exitPosition[count] / n_samples, Pder(xaxis,t,b,D,Sfunct(t,b,D))*dr);
     }
     fclose(fp);
 
 
     dr =  b/(double)(n_bins);
     t = b*b/D/10;
-    arr_exitPosition[n_bins];
     for (int count = 0; count < n_bins; count++) {
         arr_exitPosition[count] = 0;
     }
@@ -82,15 +85,15 @@ void make_data_funcReconstr () {
     }
     fp = fopen("../results/samplers_funcReconstr_pt10.txt", "w");
     for (int count = 0; count < n_bins; count++) {
-        fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
-                arr_exitPosition[count] / n_samples);
+        xaxis = (count + 0.5) * dr;
+        fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
+                arr_exitPosition[count] / n_samples, Pder(xaxis,t,b,D,Sfunct(t,b,D))*dr);
     }
     fclose(fp);
 
 
     dr =  b/(double)(n_bins);
     t = b*b/D;
-    arr_exitPosition[n_bins];
     for (int count = 0; count < n_bins; count++) {
         arr_exitPosition[count] = 0;
     }
@@ -100,8 +103,9 @@ void make_data_funcReconstr () {
     }
     fp = fopen("../results/samplers_funcReconstr_pt1.txt", "w");
     for (int count = 0; count < n_bins; count++) {
-        fprintf(fp, "%lf\t%lf\n", (count + 0.5) * dr,
-                arr_exitPosition[count] / n_samples);
+        xaxis = (count + 0.5) * dr;
+        fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
+                arr_exitPosition[count] / n_samples, Pder(xaxis,t,b,D,Sfunct(t,b,D))*dr);
     }
     fclose(fp);
 

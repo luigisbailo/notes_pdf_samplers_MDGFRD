@@ -26,7 +26,7 @@ void make_data_comparisonPfree (){
     double p,p_free;
     FILE *fp;
 
-    fp = fopen("../results/samplers_comparisonPfree.txt", "w");
+    fp = fopen("../src/results/samplers_comparisonPfree.txt", "w");
 
     while (r<b) {
         t = b*b/D/100;

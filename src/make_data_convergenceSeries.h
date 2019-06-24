@@ -44,7 +44,7 @@ void make_data_convergenceSeries () {
             t += dt;
         }
     }
-    fp_qS = fopen("../results/samplers_convergenceSeries_qS.txt", "w");
+    fp_qS = fopen("../src/results/samplers_convergenceSeries_qS.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_qS, "%lf\t%lf\t%lf\n", t0+ samples_per_bin*(count+0.5)*dt,
                  arr_q[count]/samples_per_bin, arr_S[count]/samples_per_bin);
@@ -71,7 +71,7 @@ void make_data_convergenceSeries () {
 
         }
     }
-    fp_pP_t1 = fopen("../results/samplers_convergenceSeries_pP_t1.txt", "w");
+    fp_pP_t1 = fopen("../src/results/samplers_convergenceSeries_pP_t1.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t1, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);
@@ -95,7 +95,7 @@ void make_data_convergenceSeries () {
 
         }
     }
-    fp_pP_t10 = fopen("../results/samplers_convergenceSeries_pP_t10.txt", "w");
+    fp_pP_t10 = fopen("../src/results/samplers_convergenceSeries_pP_t10.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t10, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);
@@ -119,7 +119,7 @@ void make_data_convergenceSeries () {
 
         }
     }
-    fp_pP_t100 = fopen("../results/samplers_convergenceSeries_pP_t100.txt", "w");
+    fp_pP_t100 = fopen("../src/results/samplers_convergenceSeries_pP_t100.txt", "w");
     for (int count=0; count<n_bins; count++){
         fprintf (fp_pP_t100, "%lf\t%lf\t%lf\n", samples_per_bin*dr*(count+0.5),
                  arr_p[count]/samples_per_bin, arr_P[count]/samples_per_bin);

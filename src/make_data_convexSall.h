@@ -25,7 +25,7 @@ void make_data_convexSall() {
     double dt;
     double start_point;
 
-    fp = fopen("../results/samplers_convexS_all.txt", "w");
+    fp = fopen("../src/results/samplers_convexS_all.txt", "w");
 
     while (b<B) {
         dt = b*b/D/10000;

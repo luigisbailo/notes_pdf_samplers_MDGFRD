@@ -12,6 +12,7 @@
 
 int main () {
 
+    make_data_comparisonPfree();
 
     make_data_convexS();
 
@@ -20,8 +21,6 @@ int main () {
     make_data_convexP();
 
     make_data_convexPall();
-
-    make_data_comparisonPfree();
 
     make_data_convergenceNewton();
 

@@ -47,7 +47,7 @@ void make_data_funcReconstr () {
         int bin = (int)(trunc(drawTimeNewt (b,D,gsl_rng_uniform(r))/dt));
         arr_exitTime[bin] ++;
     }
-    fp = fopen("../results/samplers_funcReconstr_q.txt", "w");
+    fp = fopen("../src/results/samplers_funcReconstr_q.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         xaxis = (count + 0.5) * dt;
         fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
@@ -65,7 +65,7 @@ void make_data_funcReconstr () {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r)) /dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_funcReconstr_pt100.txt", "w");
+    fp = fopen("../src/results/samplers_funcReconstr_pt100.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         xaxis = (count + 0.5) * dr;
         fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
@@ -83,7 +83,7 @@ void make_data_funcReconstr () {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r))/dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_funcReconstr_pt10.txt", "w");
+    fp = fopen("../src/results/samplers_funcReconstr_pt10.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         xaxis = (count + 0.5) * dr;
         fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,
@@ -101,7 +101,7 @@ void make_data_funcReconstr () {
         int bin = (int)(trunc(drawPosNewt (t,b,D,gsl_rng_uniform(r))/dr));
         arr_exitPosition[bin] ++;
     }
-    fp = fopen("../results/samplers_funcReconstr_pt1.txt", "w");
+    fp = fopen("../src/results/samplers_funcReconstr_pt1.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         xaxis = (count + 0.5) * dr;
         fprintf(fp, "%lf\t%lf\t%lf\n", xaxis,

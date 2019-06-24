@@ -24,14 +24,14 @@ void make_data_convexS () {
     int n_iterations=100;
     FILE *fp;
 
-    fp = fopen("../results/samplers_convexS_b1.txt", "w");
+    fp = fopen("../src/results/samplers_convexS_b1.txt", "w");
     for (int count=0; count<n_iterations; count++){
         t += dt;
         fprintf(fp, "%lf\t%lf\t%lf\n", t, Sder(t,b,D), Sder2(t,b,D));
     }
     fclose(fp);
 
-    fp = fopen("../results/samplers_convexS_b2.txt", "w");
+    fp = fopen("../src/results/samplers_convexS_b2.txt", "w");
     b=2;
     t=0;
     for (int count=0; count<n_iterations; count++){
@@ -40,7 +40,7 @@ void make_data_convexS () {
     }
     fclose(fp);
 
-    fp = fopen("../results/samplers_convexS_b3.txt", "w");
+    fp = fopen("../src/results/samplers_convexS_b3.txt", "w");
     b=3;
     t=0;
     for (int count=0; count<n_iterations; count++){

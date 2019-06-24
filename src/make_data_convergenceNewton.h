@@ -42,7 +42,7 @@ void make_data_convergenceNewton () {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_convergenceNewton_q.txt", "w");
+    fp = fopen("../src/results/samplers_convergenceNewton_q.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_exitTime_b1[count] / samples_per_bin, arr_exitTime_b100[count] / samples_per_bin);
@@ -69,7 +69,7 @@ void make_data_convergenceNewton () {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_convergenceNewton_pt1.txt", "w");
+    fp = fopen("../src/results/samplers_convergenceNewton_pt1.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);
@@ -94,7 +94,7 @@ void make_data_convergenceNewton () {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_convergenceNewton_pt10.txt", "w");
+    fp = fopen("../src/results/samplers_convergenceNewton_pt10.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);
@@ -120,7 +120,7 @@ void make_data_convergenceNewton () {
             Xi += dXi;
         }
     }
-    fp = fopen("../results/samplers_convergenceNewton_pt100.txt", "w");
+    fp = fopen("../src/results/samplers_convergenceNewton_pt100.txt", "w");
     for (int count = 0; count < n_bins; count++) {
         fprintf(fp, "%lf\t%lf\t%lf\n", Xi0 + samples_per_bin * (count + 0.5) * dXi,
                 arr_position_b1[count] / samples_per_bin, arr_position_b100[count] / samples_per_bin);

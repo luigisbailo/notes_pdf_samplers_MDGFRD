@@ -34,6 +34,7 @@ axs_b1q.axvline(t, linestyle='--', color=color2)
 axs_b1dq.axvline(t, linestyle='--', color=color2)
 axs_b1q.text(loc_text_x,loc_text_y,r"$b=1$", transform=axs_b1q.transAxes, bbox=boxstyle)
 axs_b1dq.text(loc_text_x,loc_text_y,r"$b=1$", transform=axs_b1dq.transAxes, bbox=boxstyle)
+axs_b1dq.text (0.12,50,r"$t^*=0.0917517$", color=color2,  fontsize=8, bbox=dict(boxstyle='round',fc="w") )
 axs_b1dq.set_xticklabels([])
 axs_b1q.set_xticklabels([])
 

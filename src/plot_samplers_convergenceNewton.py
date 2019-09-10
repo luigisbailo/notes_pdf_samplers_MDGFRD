@@ -10,7 +10,7 @@ gs0 = gridspec.GridSpecFromSubplotSpec(nrows=1, ncols=2, wspace=0.1, subplot_spe
 gs1 = gridspec.GridSpecFromSubplotSpec(nrows=3, ncols=2, hspace=0.1, wspace=0.1, subplot_spec=gs[1])
 
 boxstyle = dict(boxstyle='round',fc="w", ec="k")
-color1 = '#3366CC'
+color1 = '#446280'
 color2 = '#CC6633'
 yticks = [0,5,10]
 ylim = [0,12]

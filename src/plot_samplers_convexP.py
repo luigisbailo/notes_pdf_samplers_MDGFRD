@@ -11,7 +11,7 @@ gs1 = gridspec.GridSpecFromSubplotSpec(nrows=1, ncols=2, wspace=0.15, subplot_sp
 
 
 boxstyle = dict(boxstyle='round',fc="w", ec="k")
-color1 = '#3366CC'
+color1 = '#446280'
 color2 ='#CC6633'
 loc_text_x = 0.815
 loc_text_y = 0.65
@@ -62,8 +62,8 @@ text_loc_y = 0.1
 axs_q_b1 = fig.add_subplot(gs1[0])
 axs_q_b1.axvline(0.063*b*b/D, color='grey',linestyle='--')
 axs_q_b1.axvline(0.234*b*b/D, color='grey',linestyle='--')
-axs_q_b1.plot(data_q_b1[:int(len(data_q_b1)/2), 0], data_q_b1[:int(len(data_q_b1)/2), 1], color='#3366CC')
-axs_q_b1.plot(data_q_b1[:int(len(data_q_b1)/2):2, 0], data_q_b1[:int(len(data_q_b1)/2):2, 2], 'x', color='#CC6633',markersize=3)
+axs_q_b1.plot(data_q_b1[:int(len(data_q_b1)/2), 0], data_q_b1[:int(len(data_q_b1)/2), 1], color=color1)
+axs_q_b1.plot(data_q_b1[:int(len(data_q_b1)/2):2, 0], data_q_b1[:int(len(data_q_b1)/2):2, 2], 'x', color=color2,markersize=3)
 axs_q_b1.set_xlabel('t')
 axs_q_b1.set_ylabel('r')
 axs_q_b1.text(text_loc_x,text_loc_y,s=r"$b=1$",transform=axs_q_b1.transAxes,bbox=boxstyle)
@@ -74,8 +74,8 @@ data_q_b10 = np.loadtxt('./results/samplers_convexP_b10all.txt')
 axs_q_b10 = fig.add_subplot(gs1[1])
 axs_q_b10.axvline(0.063*b*b/D,color='grey',linestyle='--')
 axs_q_b10.axvline(0.234*b*b/D,color='grey',linestyle='--')
-axs_q_b10.plot(data_q_b10[:int(len(data_q_b10)/2), 0], data_q_b10[:int(len(data_q_b10)/2), 1], color='#3366CC')
-axs_q_b10.plot(data_q_b10[:int(len(data_q_b10)/2):2, 0], data_q_b10[:int(len(data_q_b10)/2):2, 2], 'x', color='#CC6633',markersize=3)
+axs_q_b10.plot(data_q_b10[:int(len(data_q_b10)/2), 0], data_q_b10[:int(len(data_q_b10)/2), 1], color=color1)
+axs_q_b10.plot(data_q_b10[:int(len(data_q_b10)/2):2, 0], data_q_b10[:int(len(data_q_b10)/2):2, 2], 'x', color=color2,markersize=3)
 axs_q_b10.set_xlabel('t')
 axs_q_b10.text(text_loc_x,text_loc_y,s=r"$b=10$",transform=axs_q_b10.transAxes,bbox=boxstyle)
 

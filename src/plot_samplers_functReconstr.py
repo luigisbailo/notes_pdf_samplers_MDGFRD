@@ -14,7 +14,7 @@ plt.style.use("./style.mplstyle")
 loc_x = 0.6
 loc_y = 0.7
 boxstyle = dict(boxstyle='round',fc="w", ec="k")
-color1 = '#3366CC'
+color1 = '#446280'
 color2 = '#CC6633'
 ylim = [0,0.06]
 ax_q = f.add_subplot(gs0[0])

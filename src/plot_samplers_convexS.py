@@ -13,7 +13,7 @@ boxstyle = dict(boxstyle='round',fc="w", ec="k")
 
 D=1
 b=1
-color1 = '#3366CC'
+color1 = '#446280'
 color2 ='#CC6633'
 loc_text_x = 0.85
 loc_text_y = 0.7
@@ -57,7 +57,7 @@ b=1
 text_loc_x = 0.75
 text_loc_y = 0.1
 axs_q = fig.add_subplot(gs1[0])
-axs_q.plot(data_q[:int(len(data_q)/2), 0], data_q[:int(len(data_q)/2), 1], color='#3366CC')
+axs_q.plot(data_q[:int(len(data_q)/2), 0], data_q[:int(len(data_q)/2), 1], color=color1)
 axs_q.plot(data_q[:int(len(data_q)/2):2, 0], data_q[:int(len(data_q)/2):2, 2], 'x', color='#CC6633',markersize=3)
 axs_q.set_xlabel('b')
 axs_q.set_ylabel(r"$\tau$")
